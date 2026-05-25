@@ -231,3 +231,17 @@ function hasAZero(num){
         return val === '0';
     })
 };
+
+function hasOnlyOddNumbers(arr){
+   return arr.every(function(num){
+       return num % 2 !== 0;
+        
+    })
+};
+
+function hasCertainKey(arr, key){
+    return arr.every(function(val){
+        return key[val];
+    })
+};
+

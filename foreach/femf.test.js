@@ -95,4 +95,3 @@ describe('Double Odd Numbers', function(){
         expect(doubleOddNumbers([1,2,3,4,5])).toEqual([2,6,10]);
     })
 });
-
