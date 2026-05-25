@@ -12,3 +12,27 @@ function hasAZero(num){
     })
 };
 
+function hasOnlyOddNumbers(arr){
+    return arr.every(function(num){
+       return num % 2 !== 0;
+        
+    })
+};
+
+function hasNoDuplicates(arr){
+    return arr.every(function(val){
+        return arr.indexOf(val) === arr.lastIndexOf(val);
+    })
+};
+
+function hasCertainKey(arr, key){
+    return arr.every(function(val){
+        return val[key] !== undefined;
+    })
+};
+
+function hasCertainValue(arr, key, searchValue){
+    return arr.every(function(val){
+        return val[key] === searchValue;
+    });
+};
