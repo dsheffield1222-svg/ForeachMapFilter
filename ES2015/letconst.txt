@@ -1,0 +1,7 @@
+1.You can redeclare anything that had been assign using var, unlike let. Also, let is on a blocked scope compared to var which is a hoisted variable.
+
+2.ounlike Var, you cannot redeclare or reassign values using const. Const is also is on a blocked scoped similar to let.
+
+3. You van reassign values with let, you cannot with const.
+
+4. Hoisting is the act of initializing var assigned varibles before running any code. the values can be targeted in console , but will result in undefined. let and const are blocked scoped variables and do not follow hoisting rules.
