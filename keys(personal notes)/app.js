@@ -245,3 +245,38 @@ function hasCertainKey(arr, key){
     })
 };
 
+function makePerson(first, last, age ){
+    return {
+        first,
+        last,
+        age,
+        isAlive: true
+    };
+}
+
+// const mathstuff = {
+//     x:200,
+//     add: function(a,b){
+//         return a + b;
+//     },
+//     square: function(a){
+//         return a * a;
+//     }
+// }
+
+const mathstuff = {
+    x:200,
+     add(a,b){
+        return a + b;
+    },
+        square(a){
+            return a * a;
+        }
+};//no arrow functions in objects, because of the this keyword. Arrow functions do not have their own this, they inherit it from the parent scope. In an object method, this refers to the object itself, but in an arrow function, this would refer to the global object (window in browsers) or undefined in strict mode. Therefore, using arrow functions as methods in objects can lead to unexpected behavior when trying to access properties of the object using this.
+
+function MakeColor(name, hex){
+    return {
+        [name]: hex,
+        [hex]: name
+    }
+};
