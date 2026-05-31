@@ -280,3 +280,92 @@ function MakeColor(name, hex){
         [hex]: name
     }
 };
+
+ const teaOrder= {
+    variety: 'oolong',
+    teaName: 'winter sprout',
+    origin: 'taiwan',
+    price: 12.99,
+    hasCaffeine: true,
+    quantity: 3
+ };
+
+//  const price = teaOrder.price;
+//  const quantity = teaOrder.quantity;
+//  const teaName = teaOrder.teaName;
+
+const{price, quantity, teaName, ...others} = teaOrder;
+//this is called destructuring, it allows you to extract values from objects and arrays and assign them to variables in a more concise way. The variable names must match the property names in the object.  
+const {origin} = teaOrder; 
+const newTea = {...teaOrder};
+
+
+const {brewTemp = temp = 175} = teaOrder; // this is called default values, it allows you to assign a default value to a variable if the property does not exist in the object. In this case, if brewTemp does not exist in teaOrder, it will be assigned the value of temp, and if temp does not exist, it will be assigned the value of 175.
+
+
+const {teaName: tea} = teaOrder;
+
+function checkout(tea){
+    const {quantity = 1, price} = tea;//if quantity is not provided, it will default to 1. This is useful for cases where the quantity might be optional, and we want to ensure that we have a valid number to work with when calculating the total price.
+    return quantity * price;
+}
+
+function getTotal({quantity: qty = 1, price}){
+    return quantity * price;
+};// this is called parameter destructuring, it allows you to extract values from objects passed as arguments to a function and assign them to variables in a more concise way. The variable names must match the property names in the object. In this case, when getTotal is called with an object that has quantity and price properties, those values will be extracted and used in the calculation.
+
+
+
+checkout(teaOrder);
+
+const students = [
+    {
+        name: 'tony',
+        grade: 90
+    },
+    {
+        name: 'susan',
+        grade: 88
+    },
+    {
+        name: 'anna',
+        grade: 85
+    }
+];
+
+const [first, ...losers] = students; // this is called array destructuring, it allows you to extract values from arrays and assign them to variables in a more concise way. The variable names can be anything, but the order must match the order of the elements in the array. In this case, first will be assigned the value of the first element in the students array, and losers will be assigned an array of the remaining elements.
+
+const longJumpResults = ['john', 'bob', 'susan'];
+const swimmingResults = ['susan', 'anna', 'tony'];
+function awardMedals([gold, silver, bronze]){
+    return {
+        gold,
+        silver,
+        bronze
+    };
+};
+
+let delicious = 'tacos';
+let disgusting = 'broccoli';
+// let temp = delicous;
+// delicous = disgusting;
+// disgusting = temp;
+
+let both =[delicious, disgusting];
+[disgusting, delicious] = both; // this is called array destructuring with swapping, it allows you to swap the values of two variables without needing a temporary variable. By creating an array with the two variables and then destructuring it in reverse order, you can effectively swap their values in a single line of code.
+
+[delicious, disgusting] = [disgusting, delicious];// this is a more concise way to swap the values of two variables using array destructuring. By directly destructuring an array with the two variables in reverse order, you can swap their values without needing a temporary variable or an intermediate array.
+
+
+// function raceResults([first,second,third,...rest]){
+    
+//     return {
+//        first,second,third,rest
+//     };
+
+// };
+
+//one line version
+
+const raceResults = ([first,second,third,...rest]) => ({first,second,third, rest});
+
