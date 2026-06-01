@@ -419,3 +419,9 @@ for(let [key, value] of bandMap){
     console.log(key, '=', value);
 };// this will iterate over the map using a for...of loop, destructuring each entry into key and value variables, and then logging them to the console in the format "key = value". This is a common way to iterate over maps in JavaScript, allowing you to access both the keys and values in a clean and readable manner.
 
+const color = 'teal';
+
+const obj = {};
+obj.color = '#2723FF';
+// obj['color'] = '#2723FF';
+
