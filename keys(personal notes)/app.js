@@ -369,3 +369,53 @@ let both =[delicious, disgusting];
 
 const raceResults = ([first,second,third,...rest]) => ({first,second,third, rest});
 
+const theMap= new Map();
+theMap.set(7, 'seven');
+theMap.set('three', 'three string');
+theMap.get(7); // this will return 'seven'
+//if you want to use an empty array as a key, you must create a variable to hold the array and then use that variable as the key in the map, because each time you create an empty array, it is a new object in memory, and therefore has a different reference. So if you try to use [] as a key directly, it will not work because it will be a different object each time. By creating a variable to hold the empty array, you can ensure that you are using the same reference for the key in the map.
+
+const emptyArr = [];
+theMap.set(emptyArr, 'empty array');
+theMap.get(emptyArr); // this will return 'empty array' because emptyArr is the same reference used as the key in the map.
+
+const addition = (x,y) => x+y;
+const multy = (x,y) => x*y;
+
+const funcCalls = new Map();
+funcCalls.set(addition,  1);
+funcCalls.set(multy, 9);
+
+console.log(funcCalls);
+
+console.log(funcCalls.get(addition)); // this will return 1
+console.log(funcCalls.get(multy)); // this will return 9
+
+const bandData =[
+[3,'3 doors down'],
+['three','three dog Night'],
+['four','four blind mice'],
+['eight','eight amigos'],
+[41,'sum 41']
+];
+const bandMap = new Map(bandData);
+
+bandMap.set(182,'blink 182').set('twenty', 'Matchbox twenty');
+
+console.log(bandMap.has(3)); // this will return true because the key 3 exists in the map'
+
+// bandMap.delete(41); // this will delete the key 41 and its associated value from the map
+
+// bandMap.clear(); // this will remove all key-value pairs from the map, leaving it empty. After calling clear(), the map will have no entries and its size will be 0.
+
+// bandMap.keys(); // this will return an iterator**** of all the keys in the map
+// [...bandMap.keys()]; // this will return an array***** of all the keys in the map
+
+bandMap.forEach((value,key) => {
+    console.log(key + '=>' + value);
+});// this will iterate over the map using the forEach method, which takes a callback function that receives the value and key of each entry in the map. The callback function logs the key and value to the console in the format "key => value". This is a convenient way to access both the keys and values of a map without needing to use an iterator or convert it to an array.
+
+for(let [key, value] of bandMap){
+    console.log(key, '=', value);
+};// this will iterate over the map using a for...of loop, destructuring each entry into key and value variables, and then logging them to the console in the format "key = value". This is a common way to iterate over maps in JavaScript, allowing you to access both the keys and values in a clean and readable manner.
+
