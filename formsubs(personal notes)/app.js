@@ -7,4 +7,4 @@ form,addEventListener('submit', function(e){
 document.querySelector('a').addEventListener('click', function(e){
     e.preventDefault();
     console.log("HAHAHAHAHAHAHAH NO GOOGLE");
-})
+});
