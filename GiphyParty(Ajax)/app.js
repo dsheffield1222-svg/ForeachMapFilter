@@ -1,9 +1,12 @@
 async function getGifsBySearch(phrase){
-    const resp = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=668VAgLLkhdeyYraTFVd0aRUv9zv6ZPA&tag=${phrase}&rating=pg-13`);
+    const resp = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=668VAgLLkhdeyYraTFVd0aRUv9zv6ZPA&q=${phrase}&limit=10`);
+    const gifFound = document.querySelector('#gifs');
+    const results = resp.data.data;
     console.log(resp.data);
-        const gifFound = document.querySelector('#gifs');
-        const {images} = resp.data.data;
-    gifFound.innerHTML += `<img src="${images.fixed_width.url}">`;
+    gifFound.innerHTML = '';
+    for (let gif of results) {
+        gifFound.innerHTML += `<img src="${gif.images.fixed_width.url}">`;
+    }
 };
 
 const form = document.querySelector('#searchform');
