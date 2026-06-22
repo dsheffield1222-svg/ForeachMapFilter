@@ -20,3 +20,5 @@ clearGifs.addEventListener('click', function(e){
     e.preventDefault();
     gifFound.innerHTML = ``;
 });
+
+// https://developers.giphy.com/docs/api/endpoint/#trending used to learn how to gain access to API used 
