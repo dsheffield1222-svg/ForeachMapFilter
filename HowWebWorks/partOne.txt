@@ -1,0 +1,15 @@
+HTTP is the HypertText Transfer protocol which is a set of rules that helps responds to request made on the web.
+
+URL stands for Universal Resource Locator. It's a refrence to any web recouse that may be searched for, also known as a 'web address'.
+
+DNS means Domain Name System. It takes a host name online and translate it to its corresponding IP address.
+
+A Querystring withing a unique url is a way to access addition information(search terms) that may be on a different page rather than its original startup. Multiple arguements can be passed in as well using '&'.
+
+Two verbs that are used in HTTP are "get" and "post". "Get" is requesting data from a server without making any changes."Post" on the other hand uploads new data to the server.
+
+HTTP request(get) is whenever the web browser is requsting some type of information within the servers, while HTTP response(post) is sending back information that was requested back to the web browser.
+
+A HTTP header is usually found within the request. its a piece of info obtainting important details to the server, destination , content, etc. A header ive encounted recently is the request on Youtube when continuously entering characters in the search bar.
+
+When typing a URL in a broswer, it will make a request to its IP address ensure all server informationcan be sent. After, the browser starts creating the dom from the info given from the server.
