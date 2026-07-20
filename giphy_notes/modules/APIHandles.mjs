@@ -4,6 +4,8 @@ const BASE_URL = 'https://api.giphy.com/v1/gifs';
 
 import { pullRandomGifs, randomizeOffset } from './dataHandlers.mjs';
 
+
+
 export const fetchGifs = async (query) => {
     try {
 
@@ -24,3 +26,20 @@ export const fetchGifs = async (query) => {
     };
 };
 
+/**
+ * Get GIFs by IDs
+ * @param {Array} ids -array of GIF IDs to fetch
+ * @returns {Promise<Object>} - The result object containing success status, GIFs data, and error message (if any)
+ */
+
+export const getGifsByIds = async (ids) => {
+    try {
+        const idsString = ids.join(',');
+        const url = `${BASE_URL}?api_key=${API_KEY}&ids=${idsString}`;
+        const response = await axios.get(url);
+        return { success: true, gifs: response.data.data, error: null };
+    } catch (error) {
+        console.error('Error fetching GIFs by IDs:', error);
+        return { success: false, gifs: [], error: error.message };
+    }
+};

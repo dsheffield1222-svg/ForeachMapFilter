@@ -12,16 +12,26 @@
         <p>Powered By Giphy API</p>
         <p>Search for your FAVORITE Gifs!</p>
     </header>
+    <div id="dashboard">
+        <button id="go-to-saved">Saved Gifs</button>
+        <button id="go-to-search">Search Gifs</button>
+    </div><br>
+    
     <button id="clear">Clear GIFS</button><br>
     <form action="" id="searchform">
         <input type="text" id="search-input">
         <button>Search</button>
     </form>
-    <div id="gifs"></div>
+    <div id="gifs">
+        <!-- search results here -->
+    </div>
     <div id="saved-gifs">
+        <!-- saved gifs in local storage here -->
+        <div id="saved-results">
 
+        </div>
     </div>
     <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
-    <script type="modules" src="follow.mjs"></script>
+    <script type="module" src="follow.mjs"></script>
 </body>
 </html>

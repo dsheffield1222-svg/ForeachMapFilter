@@ -1,13 +1,20 @@
 //api handlers
 import { fetchGifs } from './modules/APIHandles.mjs';
+import { appState } from './modules/AppState.mjs';
 //data handlers
 import { pullRandomGifs } from './modules/dataHandlers.mjs';
 //dom handlers
-import { displayGifs } from './modules/DOMHandlers.mjs';
+import {  displayGifs } from './modules/DOMHandlers.mjs';
+// event listeners
+import { handleGetSavedGifsClick, handleGoToSearch } from './modules/eventHandlers.mjs';
 
 const form = document.querySelector('#searchform');
 const input = document.querySelector('#search-input');
 const resultsContainer = document.querySelector('#gifs');
+
+
+const getSavedGifsBtn = document.querySelector('#go-to-saved');
+const getSearchGifsBtn = document.querySelector('#go-to-search');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -25,8 +32,8 @@ form.addEventListener('submit', async (e) => {
     }
     });
 
-
-
+getSavedGifsBtn.addEventListener('click', handleGetSavedGifsClick);
+getSearchGifsBtn.addEventListener('click', handleGoToSearch);
 
 
 

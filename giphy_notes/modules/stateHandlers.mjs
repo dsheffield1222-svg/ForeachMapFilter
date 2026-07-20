@@ -1,7 +1,12 @@
 //Anything saved to local strorage etc
 
 
-
+/**
+ * 
+ * @param {Object} gif - The GIF object to save or remove from local storage.
+ * @param {string} gif.id - The unique ID of the GIF.
+ * @returns {void} 
+ */
 export const saveRemoveIDToLocalStorage = ({ id }) => {
     //check if if is aslready in local storage
     const savedGifsIDs = JSON.parse(localStorage.getItem('savedGifs')) || [];
@@ -17,4 +22,8 @@ export const saveRemoveIDToLocalStorage = ({ id }) => {
     localStorage.setItem('savedGifs', JSON.stringify(savedGifsIDs));
     }
     
+};
+
+export const getGifIdsFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('savedGifs')) || [];
 };
