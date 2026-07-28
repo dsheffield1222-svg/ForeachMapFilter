@@ -1,3 +1,4 @@
+const axios = require('axios');
 //pokemon 
 //1 make a request to the poke api to get names and URls for every pokemon in the database and console log the results
 async function getAllPokemon() {
@@ -36,3 +37,4 @@ async function getPokemonSpecies() {
     });
     
 }
+getPokemonSpecies();
