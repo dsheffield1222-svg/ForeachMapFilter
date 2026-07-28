@@ -44,8 +44,8 @@ axios.get(baseUrl)
             .then(res => {
                 let cardSrc = res.data.cards[0].image;
                 let angle = Math.random() * 90 - 45; // random angle between -45 and 45 degrees
-                let randomX = Math.random() * 30 - 45;
-                let randomY = Math.random() * 30 - 45;
+                let randomX = Math.random() * 40 - 20;
+                let randomY = Math.random() * 40 - 20;
 
                 cardSection.append(Object.assign(document.createElement('img'), {
                     src: cardSrc,
