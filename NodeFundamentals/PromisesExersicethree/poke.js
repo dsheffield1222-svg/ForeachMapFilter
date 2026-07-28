@@ -22,7 +22,7 @@ axios.get(baseUrl)
         pokemon.forEach(p => console.log(p));
     });
 
-    //3. store the name of the selected pokemon, make another request to grab species URL
+    //3. store the name of the selected pokemon, make another request to grab species url
     let names = null;
     axios.get(baseUrl)
     .then(data => {
